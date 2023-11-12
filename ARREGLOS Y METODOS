@@ -1,0 +1,49 @@
+package arreglos_metodos;
+
+
+public class Arreglos_Metodos {
+
+
+    public static double calcularPromedioPorEstudiante(double[][] calificaciones, int estudiante) {
+        double suma = 0;
+        int numMaterias = calificaciones[estudiante].length;
+
+        for (int i = 0; i < numMaterias; i++) {
+            suma += calificaciones[estudiante][i];
+        }
+
+        return suma / numMaterias;
+    }
+
+    public static double calcularPromedioPorMateria(double[][] calificaciones, int materia) {
+        double suma = 0;
+        int numEstudiantes = calificaciones.length;
+
+        for (int i = 0; i < numEstudiantes; i++) {
+            suma += calificaciones[i][materia];
+        }
+
+        return suma / numEstudiantes;
+    }
+
+    public static void main(String[] args) {
+        double[][] calificaciones = {
+                {90.5, 85.0, 78.5, 92.0},
+                {88.0, 76.5, 89.0, 94.5},
+                {70.0, 82.5, 91.0, 87.5}
+        };
+
+        
+        for (int i = 0; i < calificaciones.length; i++) {
+            double promedioEstudiante = calcularPromedioPorEstudiante(calificaciones, i);
+            System.out.println("Promedio estudiante " + (i + 1) + ": " + promedioEstudiante);
+        }
+
+        System.out.println();
+
+        for (int j = 0; j < calificaciones[0].length; j++) {
+            double promedioMateria = calcularPromedioPorMateria(calificaciones, j);
+            System.out.println("Promedio materia " + (j + 1) + ": " + promedioMateria);
+        }
+    }
+}
