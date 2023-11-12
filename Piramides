@@ -1,0 +1,64 @@
+package piramides;
+
+import java.util.Scanner;
+
+public class Piramides {
+
+  
+
+
+    
+    public static void piramideAsteriscos(int filas1) {
+        for (int i = 1; i <= filas1; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void piramideLetras(int filas2) {
+        int inc = 1;
+        char letras = 'A';
+        for (int i = 1; i <= filas2; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(inc);
+                inc++;
+                if (j < i) {
+                    System.out.print(letras);
+                    letras++;
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Menú:");
+            System.out.println("1. Pirámide Asteriscos");
+            System.out.println("2. Pirámide Letras");
+            System.out.println("3. Salir");
+
+           
+            int opcion = ent.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingresa el número de filas de la pirámide: ");
+                    int filasAsteriscos = ent.nextInt();
+                    piramideAsteriscos(filasAsteriscos);
+                    break;
+                case 2:
+                    System.out.print("Ingresa el número de filas de la pirámide: ");
+                    int filasLetras = ent.nextInt();
+                    piramideLetras(filasLetras);
+                    break;
+            
+                default:
+                    System.out.println("Opción no válida. Por favor, selecciona 1, 2, o 3.");
+                    break;
+            }}            }
+        }
