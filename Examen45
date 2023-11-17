@@ -1,0 +1,61 @@
+package examen45;
+
+
+public class Examen45 {
+
+    
+      
+       public static double[] promVentas(double[][] ven){
+        
+        double[] promedio = new double[3];
+        
+         for (int i = 0; i < ven.length ; i++) { 
+            double suma = 0;
+            for (int j = 0; j < ven[i].length; j++) { 
+               suma += ven[i][j]; 
+            }
+        
+            promedio[i] = suma / 4;
+        }
+         
+         return promedio;
+        
+    }
+    
+    public static void main(String[] args) {
+        double[][] ven = {
+             {1500, 2200, 1800, 2000},
+            {1200, 2800, 2100, 1900},
+            {1600, 2800, 2200, 2300}
+       };
+    
+            
+      
+        
+        double[] totalPromedios = Examen45.promVentas(ven);
+        for (int i = 0; i < totalPromedios.length; i++) {
+            System.out.println(totalPromedios[i]);
+        } 
+        System.out.println("Cuanto se vendio en el mes 2 dia 3 es");
+        System.out.println("3500");
+     
+}}     
+       
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
